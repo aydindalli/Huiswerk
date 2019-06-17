@@ -1,4 +1,68 @@
+# Odev - 1
+Kelime=input("Bir kelime giriniz ;")
+x=len(Kelime)
+print("&"*(x+2),"\n","*",Kelime,"*","\n","-"*(x+2),"\n","&"*(x+2),sep="")
 
 
-jhadfjksakjdsh
-kjhsdjkfhaklsdh
+# Odev - 2
+# Mesafe Donusturme (1km=0.6214mil)
+Afstand = input("Km olarak uzaklik =")
+Mil= int(Afstand)*(0.6214)
+print("Mesafe uzunlugu",Mil,"mildir")
+
+
+# Odev - 3
+# Ortalama (Gemiddelde scoor)
+Ad_Soyad=input("Ad ve Soyad ;")
+v=int(input("Vize Notu ="))
+f=int(input("Final Notu ="))
+k=int(input("Kacirilan Ders Sayisi ="))
+Ort = v*(0.3)+f*(0.5)+(100-5*k)*(0.2)
+print("Ogrenci Not Ortalamasi ;", Ort)
+Dosya=open("ogrenciNotOrtalama.txt","w")
+print(Ad_Soyad,file=Dosya)
+print("Vize",v,file=Dosya)
+print("Final",f,file=Dosya)
+print("Kacak",k,file=Dosya)
+Dosya.close()
+
+
+#Odev - 4
+# Faiz Haram
+A=int(input("Ana Para ="))
+N=int(input("Faiz Orani ="))
+T=int(input("Faiz Suresi ="))
+F=A*N*T/100
+S=F+A
+print("Faiz=",F,"\n","Aylik Faiz=",F/12,"\n",
+      "Gunluk Faiz=",F/3600,"\n","Toplam Para=",S)
+Faiz=open("faiz.txt","w")
+print("Faiz=",F,"\n","Aylik Faiz=",F/12,"\n",
+      "Gunluk Faiz=",F/3600,"\n","Toplam Para=",S,file=Faiz)
+Faiz.close()
+
+
+# Odev - 5
+# Aylik Masraf
+Inkomen=int(input("Aylik Geliriniz ="))
+M=int(input("Mutfak Masraf ="))
+E=int(input("Egitim Masraf ="))
+G=int(input("Giyim Masraf ="))
+U=int(input("Ulasim Masraf ="))
+Masraf=M+E+G+U
+Oran=Masraf/Inkomen
+print("Masraf; ",Masraf,"\n","Oran Yuzde; ",Oran*100,sep='')
+Gelir=open("Gelir.txt","w")
+print("Masraf;",Masraf,"\n","Oran",Oran,file=Gelir)
+Gelir.close()
+
+
+# Odev - 6
+print("""Python’un kurucusu Guido Van Rossum,Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.""")
+
+print(""\\Python'un kurucusu Guido Van Rossum,Hollanda\'nin Amsterdam\'daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur."")
+
+print('Python'un kurucusu Guido Van Rossum,Hollanda'nin Amsterdam'daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.')
