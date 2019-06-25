@@ -1,1 +1,151 @@
+# Odev1 Burclar
 
+while True :
+    ay=input("Ay ;")
+    gun=int(input("Gun ;"))
+    if ((ay=="Mart" and 21<=gun<=31) or (ay=="Nisan" and 1<=gun<=20)):
+        print("KOC burcu")
+    elif ((ay=="Nisan" and 20<=gun<=30) or (ay=="Mayis" and 1<=gun<=20)):
+        print("BOGA burcu")
+    elif ((ay=="Mayis" and 21<=gun<=31) or (ay=="Haziran" and 1<=gun<=21)):
+        print("IKIZLER burcu")
+    elif ((ay=="Haziran" and 22<=gun<=30) or (ay=="Temmuz" and 1<=gun<=22)):
+        print("YENGEC burcu")
+    elif ((ay=="Temmuz" and 23<=gun<=31) or (ay=="Agustos" and 1<=gun<=22)):
+        print("ASLAN burcu")
+    elif ((ay=="Agustos" and 23<=gun<=30) or (ay=="Eylul" and 1<=gun<=22)):
+        print("BASAK burcu")
+    elif ((ay=="Eylul" and 23<=gun<=31) or (ay=="Ekim" and 1<=gun<=23)):
+        print("TERAZI burcu")
+    elif ((ay=="Ekim" and 24<=gun<=31) or (ay=="Kasim" and 1<=gun<=22)):
+        print("AKREP burcu")
+    elif ((ay=="Kasim" and 23<=gun<=30) or (ay=="Aralik" and 1<=gun<=21)):
+        print("YAY burcu")
+    elif ((ay=="Aralik" and 22<=gun<=31) or (ay=="Ocak" and 1<=gun<=22)):
+        print("OGLAK burcu")
+    elif ((ay=="Ocak" and 23<=gun<=31) or (ay=="Subat" and 1<=gun<=18)):
+        print("KOVA burcu")
+    elif ((ay=="Subat" and 19<=gun<=28) or (ay=="Mart" and 1<=gun<=20)) :
+        print("BALIK burcu")
+    else :
+        pass    
+    break
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+# Odev2  Uzaklik Donusumu
+print("Hangi donusumu yapmak istiyorsunuz ?")
+while True :
+    Donusum=input("km->mil icin 1 e,mil->km icin 2 ye,cikmak icin lutfen \"q\"'ya basiniz ;")
+    if Donusum=="q":
+        print("Cikiliyor")
+        break
+    elif Donusum=="1" :
+        Mesafe=float(input("Mesafenizi km giriniz :"))
+        Mil=Mesafe * 0.62
+        print("Uzaklik mil olarak ",Mil, "mil dir")
+    elif Donusum=="2" :
+        Mesafe=float(input("Mesafenizi mil giriniz :"))
+        Km=Mesafe * 1.6
+        print("Uzaklik km olarak ", Km, "km dir")
+    else :
+        print("Yanlis tusa bastiniz! Bye")
+        break
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7
+
+       
+# Odev3 Username and Parola
+a=1
+while a==1 :
+    username=input("Bir kullanici adi giriniz :")
+    if len(username)<3 or len(username)>18:
+        print("Kullanici adiniz 3-18 karakter arasi olmalidir")
+    elif 3<=len(username)<=18 :
+        rakam="0123456789"
+        for x in username :
+            if x in rakam :
+                print("Rakam kullanilamaz")
+                print("Tekrar deneyiniz !")
+                break
+                quit()
+            else :
+                a=2
+    else :
+        pass
+if a==2 :
+    print("Kullanici adi :", username)
+      
+while True:
+    parola = input("Bir parola belirleyin: ")
+    if not parola:
+        print("parola bölümü boş geçilemez!")
+    elif len(parola) > 12 or len(parola) < 6:
+        print("parola 12 karakterden uzun 6 karakterden kısa olmamalı")
+    else:
+        print("Yeni parolanız", parola)
+        break
+user=open("userparola.txt","w")
+print("Kullanici Adi;",username,"\n","Parola  ;",parola ,file=user)
+user.close()
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+# Odev4 Tahmin sayi
+sayi = 4
+x = 1
+while x < 6 :
+    tahmin=int(input("Bir sayi tahmin ediniz :"))
+    if tahmin==sayi :
+        print("Tahmin dogru, sayi = ",tahmin)
+        if x==1 :
+            print("***")
+        elif x==3 or x==2 :
+            print("**")
+        elif x==4 or x==5 :
+            print("*")
+        break
+    else :
+        x+=1
+        if x==6 :
+            print("Bulamadiniz, uzgunuz!")
+            
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+# Odev5 Para isleri
+Hesap=1000
+print("Hangi islemi yapmak istediginizi seciniz :\
+(1)-bakiye kontrolu (2)-para yatirma(3)-para cekme")
+key=1
+while key==1 :
+    secim=input("Islem seciniz :")
+    if secim=="1":
+        print("Bakiyeniz :",Hesap)
+        print("Baska bir islem yapmak ister misiniz?")
+        cevap=input("evet ya da hayir   ;")
+        if cevap=="evet":
+            key=1
+        else :
+            key=2
+    elif secim=="2" :
+        yatan=int(input("Yatan para  :"))
+        Hesap +=yatan
+        print("Bakiyeniz :", Hesap)
+        print("Baska bir islem yapmak ister misiniz?")
+        cevap=input("evet ya da hayir   ;")
+        if cevap=="evet":
+            key=1
+        else :
+            key=2
+    elif secim=="3":
+        cekilen=int(input("Cekeceginiz miktari giriniz :"))
+        if cekilen > Hesap :
+            print("Hesabinizda bu kadar para yoktur!")
+        else :
+            Hesap -=cekilen
+            print("Bakiyeniz :", Hesap)
+        print("Baska bir islem yapmak ister misiniz?")
+        cevap=input("evet ya da hayir   ;")
+        if cevap=="evet":
+            key=1
+        else :
+            key=2
+ 
