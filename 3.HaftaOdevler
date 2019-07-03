@@ -1,1 +1,150 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+# 2.ODEV: SAYI TAHMIN OYUNU
 
+deger=33
+a=1
+count=0
+while a==1 :
+    try :
+        count+=1
+        tahmin=int(input("1-100 arasinda bir sayi tahmin ediniz ;"))
+        if tahmin==deger :
+            print("Tebrikler,Tahmin dogrudur ve sayi=", tahmin,'dir',count,'denemede buldunuz'"")
+            a=2
+        elif tahmin-deger > 30 :
+            print("Fazla yukari ciktin biraz asagi inmelisin!")
+        elif tahmin-deger > 15 :
+            print("Biraz daha asagi inmelisin!")
+        elif tahmin-deger > 0 :
+            print("Cok yaklastin az daha inmelisin!")
+        elif tahmin-deger <-30 :
+            print("Cok dusuk tahminde bulundun daha yuksek bir sayi girmelisin!")
+        elif tahmin-deger <-15 :
+            print("Biraz daha yukari cik!")
+        elif tahmin-deger <0 :
+            print("Cok yaklastin az daha cikmalisin!")
+        else :
+            pass
+    except :
+        print("Yanlis giris, Tahmin sayiniz 1-100 arasinda olmalidir")
+    
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+## 4.ODEV: ALAN-HACIM HESAPLAMA
+
+while True :
+    try :
+        islem=input(""" \nHesaplamak istediginiz islemi seciniz
+            1-Karenin alanini hesaplamak icin 1 e
+            2-Ucgenin alanini hesaplamak icin 2 e
+            3-Dikdortgenin alanini hesaplamak icin 3 e
+            4-Kupun hacmini hesaplamak icin 4 e
+            5-Kurenin hacmini hesaplamak icin 5 e
+            6-Koninin hacmini hesaplamak icin 6 ya
+            7-Cikmak icin "7" ye basiniz     ;""")
+        pi=3.14
+        if islem=="7" :
+            print("Cikis yapiliyor...")
+            break
+        elif islem=="1" :
+            a=float(input("Karenin bir kenarini giriniz ;"))
+            if a>0 :
+                AK=a**2
+                print("Alan Kare =", AK)
+            else :
+                print("Uzunluk pozitif olmalidir!")
+        elif islem=="2" :
+            yuk=float(input("Ucgenin yuksekligini giriniz ;"))
+            taban=float(input("Ucgenin taban uzunlugunu giriniz ;"))
+            if yuk>0 and taban>0 :
+                AU= (yuk*taban)/2
+                print("Ucgenin Alani =", AU)
+            else :
+                print("Uzunluklar pozitif olmalidir!")
+        elif islem=="3" :
+            k=float(input("Dikdortgenin kisa kenarini giriniz :"))
+            u=float(input("Dikdortgenin uzun kenarini giriniz :"))
+            if k>0 and u>0 :
+                AD=k*u
+                print("Dikdortgenin Alani =", AD)
+            else :
+                print("Uzunluklar pozitif olmalidir!")
+        elif islem=="4" :
+            x=float(input("Kubun bir kenarini giriniz ;"))
+            if x>0 :
+                HK = x**3
+                print("Kubun HAcmi =", HK)
+            else :
+                print("Uzunluk pozitif olmalidir!")
+        elif islem=="5":
+            r=float(input("Kurenin yaricapini giriniz ;"))
+            if r>0 :
+                HE=(4/3)*pi*(r**3)
+                print("Kurenin Hacmi =",HE)
+            else :
+                print("Uzunluk pozitif olmalidir!")
+        elif islem=="6":
+            h=float(input("Koninin Yuksekligini giriniz :"))
+            R=float(input("Koninin taban yaricaoini giriniz :"))
+            if h>0 and R>0 :
+                HO=(1/3)*pi*(R**2)*h
+                print("Koninin Hacmi =",HO)
+            else :
+                print("Uzunluklar pozitif olmalidir!")
+        else :
+            print("Yanlis giris yaptiniz lutfen kontrol ediniz!")
+        
+    except ValueError as hata :
+        print(hata)
+    else :
+        pass
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# 5.ODEV: FIZZ BUZZ
+
+
+sayi=0
+while sayi<=99 :
+    sayi +=1
+    if sayi%15==0 :
+        print("FIZZBUZZ")
+    elif sayi%5==0 :
+        print("BUZZ")
+    elif sayi%3==0 :
+        print("FIZZ")
+    else :
+        print(sayi)
+      
+      
+######################################################################
+# 6.ODEV: ASAL SAYI MI?
+# Kullanicidan aldiginiz sayinin asal sayi olup olmadigini sorgulayan
+# bir program yazmanizi istiyoruz.
+while True :
+    try :
+        cik=input("Cikmak icin 'q' ya devam etmek icin 'enter''a basiniz  ;")
+        if cik=="q":
+            print("Programdan cikiliyor...")
+            break
+        else :
+            pass
+        sayi=int(input("Asal olup olmadigini belirlemek istediginiz sayiyi giriniz ;"))
+        sinir=sayi**(0.5)
+        x=2
+        count=0
+        while x < sinir :
+            sonuc = sayi % x
+            x +=1
+            if sonuc ==0 :
+                count=0
+                print(sayi,"sayisi asal degildir..!")
+                break
+            
+            if sonuc !=0 :
+                count=1
+        if count==1 :
+            print(sayi,"sayisi asaldir..!")
+    except :
+        print("Sadece pozitif tamsayi girilmelidir!")
