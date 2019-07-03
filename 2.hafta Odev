@@ -61,7 +61,8 @@ while True :
 
        
 # Odev3 Username and Parola
-a=1
+
+a=1 ; control = 0
 while a==1 :
     username=input("Bir kullanici adi giriniz :")
     if len(username)<3 or len(username)>18:
@@ -72,14 +73,13 @@ while a==1 :
             if x in rakam :
                 print("Rakam kullanilamaz")
                 print("Tekrar deneyiniz !")
+                control = 1
                 break
-                quit()
-            else :
-                a=2
-    else :
-        pass
-if a==2 :
-    print("Kullanici adi :", username)
+        if control == 1:
+            control = 0
+        else :
+            a=2
+print("Kullanici adi :", username)
       
 while True:
     parola = input("Bir parola belirleyin: ")
