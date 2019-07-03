@@ -1,8 +1,13 @@
 # Odev1 Burclar
+# Burclar
 
 while True :
-    ay=input("Ay ;")
+    ay=input("Ay giriniz ya da Programdan cikmak icin 'q' ye basiniz...;")
+    if ay == "q" :
+        print("Houdoe!")
+        break
     gun=int(input("Gun ;"))
+    
     if ((ay=="Mart" and 21<=gun<=31) or (ay=="Nisan" and 1<=gun<=20)):
         print("KOC burcu")
     elif ((ay=="Nisan" and 20<=gun<=30) or (ay=="Mayis" and 1<=gun<=20)):
@@ -28,8 +33,10 @@ while True :
     elif ((ay=="Subat" and 19<=gun<=28) or (ay=="Mart" and 1<=gun<=20)) :
         print("BALIK burcu")
     else :
-        pass    
-    break
+        print("Yanlis giris yaptiniz, tekrar deneyiniz")
+            
+
+
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 # Odev2  Uzaklik Donusumu
@@ -90,10 +97,11 @@ user.close()
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 # Odev4 Tahmin sayi
+
 sayi = 4
 x = 1
 while x < 6 :
-    tahmin=int(input("Bir sayi tahmin ediniz :"))
+    tahmin=int(input("1-10 arasinda bir sayi tahmin ediniz :"))
     if tahmin==sayi :
         print("Tahmin dogru, sayi = ",tahmin)
         if x==1 :
@@ -107,6 +115,10 @@ while x < 6 :
         x+=1
         if x==6 :
             print("Bulamadiniz, uzgunuz!")
+        else :
+            print("Tekrar tahmin ediniz :")
+
+
             
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
@@ -148,4 +160,5 @@ while key==1 :
             key=1
         else :
             key=2
- 
+     else :
+        print("Yanlis giris yaptiniz tekrar deneyiniz ;")
