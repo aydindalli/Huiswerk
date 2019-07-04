@@ -1,6 +1,46 @@
+# 1.ODEV: HESAP OLUSTURMA
+# Dosya olusuyor ama kontrol caismiyor
+print("Kullanici adi ve parola olusturunuz ;")
+
+a=1 ; control = 0
+while a==1 :
+    username=input("Bir kullanici adi giriniz :")
+    if not username :
+        print("Kullanici adi bos birakilamaz !")
+    if len(username)<3 or len(username)>18:
+        print("Kullanici adiniz 3-18 karakter arasi olmalidir")
+    elif 3<=len(username)<=18 :
+        rakam="0123456789"
+        for x in username :
+            if x in rakam :
+                print("Rakam kullanilamaz")
+                print("Tekrar deneyiniz !")
+                control = 1
+                break
+        if control == 1:
+            control = 0
+        else :
+            a=2
+with open("username.txt","a+") as kullan:
+    if username in kullan :
+        print('Bu isim başka kullanıcıya ait. Yeni bir isim belirleyiniz!')
+                
+                    
+while True:
+    parola = input("Bir parola belirleyin: ")
+    if not parola:
+        print("parola bölümü boş geçilemez!")
+    elif len(parola) > 12 or len(parola) < 6:
+        print("parola 12 karakterden uzun 6 karakterden kısa olmamalı")
+    else:
+        print("Verileriniz kaydediliyor...")
+        veri='Kullanıcı adı = {}\nŞifre = {}\n'.format(username,parola)
+        with open("username.txt","a+") as kullan:
+            kullan.write(veri)
+    break
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 # 2.ODEV: SAYI TAHMIN OYUNU
-
+# random sayi ile de yapilabilir...
 deger=33
 a=1
 count=0
@@ -31,7 +71,53 @@ while a==1 :
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+#3.ODEV: LISTE AYIKLAMA
+# Calistiramadim, eksik ?
+try:
+   futb_list=open('futbolcular.txt','r')  
+except FileNotFoundError:
+   print('Dosya mevcut değil')      
+   
+# print(futb_list.read())
+while True:
+    futbolcu=futb_list.readline()
+ 
+    if 'Galatasaray' in futbolcu:    
+        i = 0                        
+        futbolcu_isim=''             
+        while futbolcu[i] != ',':
+            futbolcu_isim+=futbolcu[i]
+            i+=1
+        with open("Galatasaray.txt","a+") as galatasaray:
+            galatasaray.write(futbolcu_isim)
+            galatasaray.write('\n')
+        continue
+    elif 'Fenerbahce' in futbolcu:
+        i = 0
+        futbolcu_isim = ''
+        while futbolcu[i] != ',':
+            futbolcu_isim += futbolcu[i]
+            i += 1
+        with open("Fenerbahce.txt","a+") as fenerbahce:
+            fenerbahce.write(futbolcu_isim)
+            fenerbahce.write('\n')
+        continue
+    elif 'Besiktas' in futbolcu:
+        i = 0
+        futbolcu_isim = ''
+        while futbolcu[i] != ',':
+            futbolcu_isim += futbolcu[i]
+            i += 1
+        with open("Besiktas.txt","a+") as besiktas:
+            besiktas.write(futbolcu_isim)
+            besiktas.write('\n')
+        continue
+    else:
+        futb_list.close()
+        break
+##print(besiktas.read())
+##print(fenerbahce.read())
+##print(galatasaray.read())
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ## 4.ODEV: ALAN-HACIM HESAPLAMA
 
