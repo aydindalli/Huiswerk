@@ -187,20 +187,25 @@ while True :
         else :
             pass
         sayi=int(input("Asal olup olmadigini belirlemek istediginiz sayiyi giriniz ;"))
-        sinir=sayi**(0.5)
-        x=2
-        count=0
-        while x < sinir+0.1 :
-            sonuc = sayi % x
-            x +=1
-            if sonuc ==0 :
-                count=0
-                print(sayi,"sayisi asal degildir..!")
-                break
-            
-            if sonuc !=0 :
-                count=1
-        if count==1 :
-            print(sayi,"sayisi asaldir..!")
+        
+        if sayi>=2 :
+            if sayi == 2:
+                print("2 sayisi asaldir..!")
+            x=2
+            count=0
+            while x < sayi :
+                sonuc = sayi % x
+                x +=1
+                if sonuc ==0 :
+                    count=0
+                    print(sayi,"sayisi asal degildir..!")
+                    break
+                    
+                if sonuc !=0 :
+                    count=1
+            if count==1 :
+                print(sayi,"sayisi asaldir..!")
+        else :
+            print("1 den buyuk tamsayi giriniz.")
     except :
-        print("Sadece pozitif tamsayi girilmelidir!")
+        print("1 den buyuk pozitif tamsayi girilmelidir!")
