@@ -1,14 +1,84 @@
-#
+## Odev-1
+# Kullanıcıdan bir input alınız. Input'taki küçük harfleri büyük harfe dönüştüren bir program yazınız.
+try :
+    dizin=input("Bir kelime giriniz ;")
+    print(dizin.upper())
+except :
+    print("Lutfen sadece harf giriniz...")
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-#
+## Odev2
+# Kullanıcıdan bir input alınız. Girmiş olduğu inputta büyük harf sayısı, küçük harf sayısı, 
+#rakam sayısı ve bunların haricindeki özel karakter sayılarını veren bir program yazınız.
+try :
+    a=0 ; b=0 ;c=0; d=0
+    karakter=input("Ne girersen gir yine de gir ;")
+    for i in karakter :
+        if i.islower() ==True :
+            a+=1
+        elif i.isupper() == True :
+            b+=1
+        elif i.isdigit()==True :
+            c+=1
+        elif i.count(" ") :
+            pass
+        else : 
+            d+=1
+    print('{} tane kucuk harf, {} tane buyuk harf, {} tane rakam ve {} tane ozel karakter vardir'.format(a,b,c,d))
+        
+except :
+    print("Daha ne girecen")
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-#
+## Odev3
+# Kullanıcıdan bir input alınız. Girmiş olduğu inputtaki rakamların toplamını 
+# veren bir program yazınız. (Kullanıcı rakam girmek zorunda değil.farklı karakter girişi de yapabilir.)
+
+try :
+    a=input("Karisik birseyler girin ;")
+    print(a)
+    top=0
+    for r in a:
+        if r.isdigit()==True :
+            top=top+int(r)
+        else:
+            pass
+    print("Rakamlar toplami = ",top)
+            
+except :
+    print("Hatasiz giris yapin, Rakamsiz olmaaaaz!")
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-#
+## Odev4
+# Futbolcular dosyasındaki futbolculardan ismi sesli harf ile başlayanları ayrı bir dosyaya yazdırınız.
+
+
+try :
+    with open('futbolcular.txt','r') as isim:
+        hedef="AEIOUÖÜ"
+        for line in isim:
+            for x in hedef :
+                if line.startswith(x)==True:
+                    with open('SesliTakim.txt','a+') as yeni:
+                        yeni.write(line)
+except FileNotFoundError:
+    print("Kaynak dosya bulunamadi. Lutfen kontrol ediniz....")
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-#
+## Odev5
+# Futbolcular dosyasındaki futbolcu isimlerini yazdığınız program ile Türkçe karakter içermeyecek bir hale getirip 
+# yeni bir dosyaya kaydediniz.
+
+try :
+    with open('futbolcular.txt','r') as isim:
+        kaynak = "şçöğüıŞÇÖĞÜİ"
+        hedef = "scoguiSCOGUI"
+        ceviri_tablosu = str.maketrans(kaynak, hedef)
+        for line in isim:
+            guncel=line.translate(ceviri_tablosu) 
+            with open('TurkcesizFutbolcu.txt','a+') as zonder:
+                zonder.write(guncel)
+                
+except FileNotFoundError:
+    print("Kaynak dosya bulunamadi. Lutfen kontrol ediniz....")
 
