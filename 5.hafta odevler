@@ -1,0 +1,24 @@
+# Odev1 ; Yapilacaklar
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Odev-2 ; Adam asmaca
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Odev-3 ; 4 basamakli sayi tahmin et
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Odev-4 ; # KOMBINASYON + PERMUTASYON
+# İki liste ile; İlk liste 1'den 10'a kadar sayılardan,ikinci listeyi sırasıyla a'dan başlayarak 10 harf ile oluşturun.
+  
+sayilar=['1','2','3','4','5','6','7','8','9','10'] 
+alfabe="abcdefghij" ; harfler=list(alfabe)
+liste1=[i+j for i in sayilar for j in harfler]
+liste2=[j+i for i in sayilar for j in harfler]
+print(liste1)
+print(liste2)
