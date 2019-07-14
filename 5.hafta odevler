@@ -9,6 +9,45 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # Odev-3 ; 4 basamakli sayi tahmin et
+sayi="9753"
+sayilist=list(sayi)
+print(sayilist)
+
+while True :
+    sayidogruyeriyanlis=0
+    sayiveyeridogru=0
+    
+    tahmin=input("4 basamakli bir sayi tahmin ediniz ;")
+    if len(tahmin)!=4 :
+        print("Lutfen 4 basamakli sayi tahmin ediniz ;")
+    else :
+        tahminlist=list(tahmin)
+        count=0
+        for x in range(4) :
+            for y in range(4) :
+                if x!=y :
+                    if tahminlist[x]==tahminlist[y] or tahminlist[x]=='0' or tahminlist[x]=='0'  :
+                        count=1
+        if count==1 :
+            print("Biribirinden ve sifirdan farkli bir sayi tahmin ediniz ;")
+            continue
+        else :
+                 
+            for i in range(len(tahminlist)) :
+                for j in range(len(sayilist)) :
+                    if tahminlist[i]==sayilist[j]:
+                        if i==j :
+                            sayiveyeridogru +=1
+                        else :
+                            sayidogruyeriyanlis +=1
+                    else :
+                        continue 
+            if sayiveyeridogru==4:
+                print("Dogru tahmin", sayi)
+                print("Tam tahmin ;","+",sayiveyeridogru, "-", sayidogruyeriyanlis)
+                break
+            else :
+                print("Yaklasik Tahmin ;", "+",sayiveyeridogru, "-", sayidogruyeriyanlis)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
