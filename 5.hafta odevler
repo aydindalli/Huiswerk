@@ -4,7 +4,94 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # Odev-2 ; Adam asmaca
-
+kelime=input("Yonetici, Bir kelime giriniz  ;   ")
+don=0
+count=0
+sonuc=[]
+liste=list(kelime)
+for x in range(len(liste)):
+    sonuc+='_'
+    
+while don<6 :
+    don+=1
+    tahmin=input("Lutfen bir harf tahmin ediniz ; ")
+    if tahmin.isalpha()!=True :
+        print("Lutfen harf giriniz ;  ")
+        don-=1
+    else :
+        
+        for i in range(len(liste)) :
+            if liste[i]==tahmin :
+                sonuc[i]=liste[i]
+                don-=1
+            
+        if sonuc==liste:
+            print("Tebrikler Bildiniz ...KELIME ; ", ' '.join(sonuc))
+            break
+        
+        if tahmin not in liste :    
+            count+=1
+            if count==1 :
+                print("""    O zaman Kafa yolcu...;     
+                          
+                            ------
+                            |     |
+                            |     O
+                            |    
+                            |
+                            |
+                           ___        """,6-count,"hakkiniz kaldi!")
+            elif count==2 :
+                 print("""   Ic organlara dikkat...;     
+                          
+                            ------
+                            |     |
+                            |     O
+                            |     |
+                            |
+                            |
+                           ___        """,6-count,"hakkiniz kaldi!")
+            elif count==3 :
+                 print("""   Hey kendine gel sag kol yolcu...;     
+                          
+                            ------
+                            |     |
+                            |     O
+                            |    -|
+                            |     
+                            |
+                           ___        """,6-count,"hakkiniz kaldi!") 
+            elif count==4 :
+                 print("""   Yazik sol kol da yolcu...;     
+                          
+                            ------
+                            |     |
+                            |     O
+                            |    -|- 
+                            |     
+                            |
+                           ___        """,6-count,"hakkiniz kaldi!") 
+            elif count==5 :
+                 print("""   Aha Sag bacak da yolcu...;     
+                          
+                            ------
+                            |     |
+                            |     O
+                            |    -|- 
+                            |    [
+                            |
+                           ___        """,6-count,"hakkiniz kaldi!") 
+            else :
+                 print("""   Uzgunuz ; Adam oldu...     
+                          
+                            ------
+                            |     |
+                            |     O
+                            |    -|- 
+                            |    [ ]
+                            |
+                           ___        ""","Tahmin hakkiniz bitti!") 
+        print("Kelime ; ",' '.join(sonuc))
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
