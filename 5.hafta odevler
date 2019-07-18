@@ -1,5 +1,44 @@
 # Odev1 ; Yapilacaklar
-
+try :
+    yapilacaklar=[]
+    yapilanlar=[]
+    while True :
+        isguc=input("""Yapmak istediginiz isi belirleyip giriniz , 
+                    1-Yapilacak isleri belirlemek ve listelemek icin '1' e basiniz
+                    2-Gorev bitti ise yapilanlar listesine eklemek icin '2' e basiniz
+                    3-Yapilacaklar listesinden gorev silme icin '3' ye basiniz
+                    4-Temizlik yapilmali, yenisine saglik icin '4' e basiniz
+                    5-Cikmak icin 'q' ya basiniz
+                    Giris..............=  """)
+        if isguc=="q":
+            print("Cikiyoruz...")
+            break
+        elif isguc=='1' :
+            yap=input("Yapilacak ne is var ;")
+            yapilacaklar.append(yap)
+        elif isguc=='2' :
+            bitti=input("Biten gorevin numarasini giriniz ;")
+            a=yapilacaklar.pop(int(bitti)-1)
+            yapilanlar.append(a)
+            #yapilanlar=yapilacaklar.pop()
+            print("Yapilan isler ...;")
+            for i in range(len(yapilanlar)) :
+                print("{}. {}".format(i+1, yapilanlar[i]))
+        elif isguc=='3' :
+            bos=input('Yapmak istemediginiz gorevi numarasi ile kaldiriniz  ;')
+            del yapilacaklar[int(bos)-1]
+        elif isguc=='4' :
+            yapilacaklar.clear()
+            print("Yapilacak is YOK")
+            
+        if len(yapilacaklar)==0:
+            print("Su an yapilacaklar listeniz bos")
+        else :
+            print("Yapilacak isler hazir....;")
+            for i in range(len(yapilacaklar)) :
+                print("{}. {}".format(i+1, yapilacaklar[i]))
+except :
+    print("Hata")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
