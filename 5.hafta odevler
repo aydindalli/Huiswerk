@@ -144,8 +144,8 @@ while True :
     sayiveyeridogru=0
     
     tahmin=input("4 basamakli bir sayi tahmin ediniz ;")
-    if len(tahmin)!=4 :
-        print("Lutfen 4 basamakli sayi tahmin ediniz ;")
+    if tahmin.isnumeric()==False or len(tahmin)!=4 :
+        print("Lutfen 4 basamakli pozitif bir tamsayi tahmin ediniz ;")
     else :
         tahminlist=list(tahmin)
         count=0
